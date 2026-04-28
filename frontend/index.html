@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>SkillScroll MVP</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Progress Bar / Header -->
+        <header class="top-header">
+            <div class="skill-level">Skill Level: Apprentice Weaver &rarr; Negotiator</div>
+            <div class="xp-bar-container"><div class="xp-bar" id="xpBar"></div></div>
+        </header>
+
+        <!-- Quest Feed -->
+        <main class="quest-feed" id="questFeed">
+            <!-- Quest 1 -->
+            <div class="quest-card" data-quest-id="quest-1">
+                <div class="quest-content">
+                    <span class="quest-badge">Hard</span>
+                    <h2>Mandi Hustle</h2>
+                    <p>Aggressive wholesaler lowballing Mysore silk by 30-40%.</p>
+                    <button class="start-btn" onclick="openNegotiation('quest-1', 'Mandi Hustle')">Start Negotiation</button>
+                </div>
+            </div>
+
+            <!-- Quest 2 -->
+            <div class="quest-card" data-quest-id="quest-2" style="background: linear-gradient(135deg, rgba(30,40,40,0.9), rgba(10,20,20,0.9));">
+                <div class="quest-content">
+                    <span class="quest-badge" style="background:#ff9800;">Medium</span>
+                    <h2>Credit Trap</h2>
+                    <p>Buyer demanding goods on indefinite credit. Demand 50% advance!</p>
+                    <button class="start-btn" onclick="openNegotiation('quest-2', 'Credit Trap')">Start Negotiation</button>
+                </div>
+            </div>
+
+            <!-- Quest 3 -->
+            <div class="quest-card" data-quest-id="quest-3" style="background: linear-gradient(135deg, rgba(40,30,40,0.9), rgba(20,10,20,0.9));">
+                <div class="quest-content">
+                    <span class="quest-badge" style="background:#4caf50;">Easy</span>
+                    <h2>Tourist Bargain</h2>
+                    <p>Foreign tourist negotiating in English. Practice mixing confidence + basic phrases.</p>
+                    <button class="start-btn" onclick="openNegotiation('quest-3', 'Tourist Bargain')">Start Negotiation</button>
+                </div>
+            </div>
+        </main>
+
+        <!-- Negotiation Overlay -->
+        <div class="negotiation-overlay" id="negotiationOverlay">
+            <div class="negotiation-header">
+                <button class="back-btn" onclick="closeNegotiation()"><i class="fas fa-arrow-left"></i></button>
+                <h3 id="activeQuestTitle">Mandi Hustle</h3>
+            </div>
+            
+            <div class="chat-area" id="chatArea">
+                <div class="system-msg">Hold the mic button to start speaking.</div>
+            </div>
+
+            <div class="controls-area">
+                <div class="status-indicator" id="statusIndicator">Connecting...</div>
+                <button class="ptt-btn" id="pttBtn">
+                    <i class="fas fa-microphone"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Feedback Modal -->
+        <div class="feedback-modal" id="feedbackModal">
+            <div class="feedback-content">
+                <h2>Success! <i class="fas fa-check-circle" style="color: #00BFA5;"></i></h2>
+                <p id="feedbackText">You saved ~35% margin! +50 XP</p>
+                <div class="confidence-meter">
+                    <div class="meter-fill" id="meterFill"></div>
+                </div>
+                <p class="confidence-text">Confidence: <span id="confidenceScore">85</span>/100</p>
+                <button class="share-btn" onclick="shareToWhatsApp()"><i class="fab fa-whatsapp"></i> Share to WhatsApp</button>
+                <button class="close-feedback-btn" onclick="closeFeedback()">Continue</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
