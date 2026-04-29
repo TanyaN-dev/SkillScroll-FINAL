@@ -6,7 +6,7 @@ SkillScroll is an audio-first mobile web application designed to help rural Karn
 - **Reels-Style Feed**: Vertical scroll of quest cards.
 - **Audio Native UI**: "Hold to Talk" push-to-talk interface.
 - **AI Roleplay**: Driven by Gemini Flash with specific local personas (Mandi wholesaler, strict buyer, tourist).
-- **Stateless & Scalable**: Designed to be deployed on Google Cloud Run.
+- **Stateless & Scalable**: Designed to be deployed on Render.
 
 ## Tech Stack
 - **Backend**: FastAPI (Python 3.11)
