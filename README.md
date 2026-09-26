@@ -49,12 +49,6 @@ SkillScroll is an audio-first mobile web application designed to help rural Karn
 6. View the feedback modal that pops up after the response.
 7. Click "Share to WhatsApp" to test the social sharing.
 
-## SDG 5 & 8 Alignment
-- **SDG 5 (Gender Equality)**: Empowers female artisans by building confidence in negotiation and business dealings, historically male-dominated spheres.
-- **SDG 8 (Decent Work and Economic Growth)**: Provides tools for artisans to secure fair prices, reducing exploitation by middlemen and driving better economic outcomes for micro-businesses.
+ (Gender Equality)**: Empowers female artisans by building confidence in negotiation and business dealings, historically male-dominated spheres.
 
-## How to Swap Mock Bhashini Functions
-In `main.py`, locate `mock_bhashini_stt` and `mock_bhashini_tts`.
-1. Inside `mock_bhashini_stt`, make a `httpx` or `aiohttp` POST request to the Bhashini ASR endpoint, passing the `audio_bytes`. Extract and return the transcribed text.
-2. Inside `mock_bhashini_tts`, make a POST request to the Bhashini TTS endpoint with the `text`. Return the binary audio response. 
-3. In `script.js` `sendAudioToBackend`, replace the `SpeechSynthesisUtterance` fallback with playing the audio blob returned from the backend.
+(Decent Work and Economic Growth)**: Provides tools for artisans to secure fair prices, reducing exploitation by middlemen and driving better economic outcomes for micro-businesses.
